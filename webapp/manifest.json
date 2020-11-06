@@ -118,8 +118,8 @@
 				},
 				"Responsabili": {
 				
-					"viewId": "Responsabili.fragment",
-					"viewName": "Responsabili.fragment"
+					"viewId": "Responsabili",
+					"viewName": "Responsabili"
 			}
 		}
 	}
