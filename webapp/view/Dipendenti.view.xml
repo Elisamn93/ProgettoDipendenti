@@ -1,0 +1,60 @@
+<mvc:View controllerName="project.Project.controller.Dipendenti" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<Table noDataText="Drop column list items here and columns in the area above" id="tableDipendenti" items="{Employee>/dipendenteSet}"
+							class="sapUiContentPadding">
+							<headerToolbar>
+								<Toolbar>
+									<Title text="{i18n>Tab}"/>
+									<ToolbarSpacer/>
+									<SearchField width="50%" search=".onFilterDipendenti"/>
+								</Toolbar>
+							</headerToolbar>
+							<items>
+								<ColumnListItem id="item1">
+									<cells>
+										<Text text="{Employee>BADGE}"/>
+										<Text text="{Employee>NOME} {Employee>COGNOME}"/>
+										<Text text="{Employee>MANSIONE}" id="text6"/>
+										<Text text="{Employee>UNITA_ORGANIZZATIVA}"/>
+										<Button text="{Employee>RESPONSABILE}" press=".onOpenWindow"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+							<columns>
+								<Column id="column0">
+									<header>
+										<Label text="{i18n>Badge}"/>
+									</header>
+								</Column>
+								<Column id="column1">
+									<header>
+										<Label text="{i18n>Nome}"/>
+									</header>
+								</Column>
+								<Column id="column2">
+									<header>
+										<Label text="{i18n>Mansione}"/>
+									</header>
+								</Column>
+								<Column id="column3">
+									<header>
+										<Label text="{i18n>UnitaOrganizzativa}"/>
+									</header>
+								</Column>
+								<Column id="column4">
+									<header>
+										<Label text="{i18n>Responsabile}" id="label5"/>
+									</header>
+								</Column>
+							</columns>
+						</Table>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

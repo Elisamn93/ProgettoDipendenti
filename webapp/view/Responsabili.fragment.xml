@@ -1,0 +1,20 @@
+<core:FragmentDefinition
+controllerName="project.Project.controller.Responsabili.fragment"
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core" >
+  	<QuickView
+		id="quickView"
+		navigate=".onNavigate">
+		<QuickViewPage
+			pageId="{pageId}"
+			header="{Employee>RESPONSABILE}"
+			title="{Employee>RESPONSABILE_NOME} {Employee>RESPONSABILE_COGNOME}">
+			<QuickViewGroup
+				heading="{heading}">
+				<QuickViewGroupElement
+					emailSubject="{Employee>RESPONSABILE_MAIL}" />
+			</QuickViewGroup>
+		</QuickViewPage>
+	</QuickView>
+   
+</core:FragmentDefinition>

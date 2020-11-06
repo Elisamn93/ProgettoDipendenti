@@ -1,0 +1,25 @@
+<mvc:View
+	controllerName="project.Project.controller.Responsabili"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page
+		title="{i18n>ResponsabiliPageTitle}" showNavButton="true" navButtonPress=".onNavBack">
+<List
+      id="ResponsabiliList"
+      class="sapUiResponsiveMargin"
+      width="auto" >
+      
+      
+         <ObjectListItem title="{Employee>RESPONSABILE}">
+		   <ObjectAttribute text="{Employee>RESPONSABILE_NOME} {Employee>RESPONSABILE_COGNOME}" />
+				
+						                 <ObjectAttribute text="{Employee>RESPONSABILE_EMAIL}"/>
+						                 <ObjectAttribute text="{Employee>RESPONSABILE_CELLULARE}"/>
+         </ObjectListItem>
+      
+   </List>
+  <!-- <ObjectHeader
+			intro="{Employee>RESPONSABILE_NOME} {Employee>RESPONSABILE_COGNOME}"
+			title="{Employee>RESPONSABILE_EMAIL} {Employee>RESPONSABILE_CELLULARE}"/>-->
+	</Page>
+</mvc:View>
