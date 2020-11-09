@@ -1,12 +1,14 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
+	"sap/ui/core/Fragment",
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator"
-], function (Controller,  Filter, FilterOperator) {
+], function (Controller,Fragment,  Filter, FilterOperator) {
 	"use strict";
 
 	return Controller.extend("project.Project.controller.Dipendenti", {
 		onInit: function () {
+			
 
 		},
 		
@@ -18,6 +20,7 @@ sap.ui.define([
 			oRouter.navTo("Responsabili",{
 				ID :  window.encodeURIComponent(oItem.getBindingContext("Employee").getPath().substr(1))
 			});
+			 
 		
 		},
 		
@@ -42,6 +45,35 @@ sap.ui.define([
 			var oList = this.byId("tableDipendenti");
 			var oBinding = oList.getBinding("items");
 			oBinding.filter(oFilterTable, sap.ui.model.FilterType.Application);
+		},
+		
+		onOpenFragment : function (oEvent) {
+			var oSelectedItem = oEvent.getSource();
+			var oContext = oSelectedItem.getBindingContext("Employee");
+			var sPath = oContext.getPath();
+			//var oProductDetailPanel = this.getView().byId("helloDialog").addDependent(this._oDialog);
+			//oProductDetailPanel.bindElement({ path: sPath, model: "Employee" });
+			var oView = this.getView();
+
+			// create dialog lazily
+			if (!this.byId("helloDialog")) {
+				// load asynchronous XML fragment
+				Fragment.load({
+					id: oView.getId(),
+					name: "project.Project.view.Resp",
+					controller: this
+				}).then(function (oDialog) {
+					// connect dialog to the root view of this component (models, lifecycle)
+					oView.addDependent(oDialog).bindElement({ path: sPath, model: "Employee" });
+					oDialog.open();
+				});
+			} else {
+				this.byId("helloDialog").open();
+			}
+		},
+
+		onCloseDialog : function () {
+			this.byId("helloDialog").close();
 		}
 		
 	});

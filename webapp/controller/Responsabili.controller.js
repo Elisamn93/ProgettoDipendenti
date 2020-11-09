@@ -8,6 +8,7 @@ sap.ui.define([
 		onInit: function () {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.getRoute("Responsabili").attachPatternMatched(this._onObjectMatched, this);
+				
 		},
 		_onObjectMatched: function (oEvent) {
 			this.getView().bindElement({

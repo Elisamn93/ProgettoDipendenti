@@ -1,0 +1,28 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" controllerName="project.Project.view.Resp">
+ <Dialog id="helloDialog" title="Referente Details">
+ 		<List id="Responsabili" class="sapUiResponsiveMargin" width="auto">
+			<ObjectListItem title="{Employee>RESPONSABILE}">
+				<attributes>
+					
+						<ObjectAttribute
+							text="{
+								parts: [
+									{path: 'Employee>RESPONSABILE_NOME'},
+									{path: 'Employee>RESPONSABILE_CONOME'},
+									{path: 'Employee>RESPONSABILE_EMAIL'},
+									{path: 'Employee>RESPONSABILE_CELLULARE'}
+								]
+							
+							}"/>
+					</attributes>
+			</ObjectListItem>
+		</List>
+		 <beginButton>
+         <Button
+            text="{i18n>dialogCloseButtonText}"
+            press=".onCloseDialog"/>
+      </beginButton>
+ </Dialog>
+  
+   
+</core:FragmentDefinition>

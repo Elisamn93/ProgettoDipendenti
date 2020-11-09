@@ -14,13 +14,15 @@
 								</Toolbar>
 							</headerToolbar>
 							<items>
-								<ColumnListItem id="item1">
+								<ColumnListItem id="item1"  type="Navigation" press=".onOpenWindow">
 									<cells>
 										<Text text="{Employee>BADGE}"/>
 										<Text text="{Employee>NOME} {Employee>COGNOME}"/>
 										<Text text="{Employee>MANSIONE}" id="text6"/>
 										<Text text="{Employee>UNITA_ORGANIZZATIVA}"/>
-										<Button text="{Employee>RESPONSABILE}" press=".onOpenWindow"/>
+										<Button text="{Employee>RESPONSABILE}"  press=".onOpenFragment" />
+									
+									
 									</cells>
 								</ColumnListItem>
 							</items>
@@ -52,6 +54,7 @@
 								</Column>
 							</columns>
 						</Table>
+						
 					</content>
 				</Page>
 			</pages>
